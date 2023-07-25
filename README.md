@@ -18,11 +18,11 @@ A simplified caching pattern is presented in the diagrams below:
 
 Data isn’t found in the cache and it is pulled from the database, it is called a **cache miss**
 
-![plot](./cache_not_found.svg)
+![plot](images/cache_not_found.svg)
 
 Data is found in the cache and there is no need to access the database, it is called a **cache hit**
 
-![plot](./cache_found.svg)
+![plot](images/cache_found.svg)
 
 The percent of attempts that result in a cache hit is called the **cache hit rate**.
 It's important indicator since it allows you to measure if your cache is working properly and efficiently, 
@@ -70,7 +70,7 @@ when a client sends a request, the data is saved to the cache and to the databas
 Although this solution minimizes the risk of data loss, it may create a performance bottleneck, because the write operation is performed two times.
 That's why write-through caches are not popular.
 
-![plot](./write_through.svg)
+![plot](images/write_through.svg)
 
 
 ### Write-behind cache
@@ -81,7 +81,7 @@ Note: We can use a message broker to achieve such a result. When the cache is be
 after receiving the message,
 performs projections and asynchronously updates the database. This approach represents weak consistency
 
-![plot](./write_behind.svg)
+![plot](images/write_behind.svg)
 
 ### Using TTL (Time To Live)
 It may happen that we don't need to update particular keys so often or some requests
